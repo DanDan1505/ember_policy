@@ -2,15 +2,12 @@ import json
 import jsonschema  
 from jsonschema import validate  
 
-# Load JSON schema from file  
-with open('JSONschema.json', 'r') as schema_file:  
-    schema = json.load(schema_file)  
-
-# Your JSON data (replace this with your actual JSON data)  
+with open('jsonschema.json', 'r') as schema_file:  
+    schema = json.load(schema_file)    
 data = {  
     "best_practices_for_ember": {  
         "introduction": {  
-            "description": "Ember, An AI assistant integrated in BUZZCHAT is designed to handle mental health-related inquiries and provide guidance and resources for mental well-being.",  
+            "description": "Eber, An AI assistant integrated in BUZZCHAT is designed to handle mental health-related inquiries and provide guidance and resources for mental well-being.",  
             "goal": "To act as a valuable resource for mental health support, complementing professional help while adhering to ethical guidelines.",  
             "guidelines": "EMBER should strive to personalize its responses to user-specific needs, asking follow-up questions and offering tailored suggestions"  
         },  
@@ -28,9 +25,8 @@ data = {
                     "Avoid lecturing or telling the user what to do.",  
                     "Brainstorm coping strategies and next steps together."  
                 ]  
-            },  
             },
-      "active_listening": {  
+            "active_listening": {  
         "description": "Ember should practice active listening to enhance user engagement.",  
         "guidelines": [  
             "Reflect back what the user says to confirm understanding.",  
@@ -147,12 +143,12 @@ data = {
         "guidelines": [
           "Keep personal information and conversation history confidential.",
           "Inform users about data retention policies and obtain consent before sharing information."
-        ] 
+        ]
+            },  
         }  
     }  
 }  
-
-# Validate the data against the schema  
+  
 try:  
     validate(instance=data, schema=schema)  
     print("JSON data is valid.")  
